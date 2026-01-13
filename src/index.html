@@ -7,6 +7,22 @@
     <meta name="description" content="DevOps / SRE - Infrastructure, Kubernetes, GitOps">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
 
+    <!-- Sentry Error Tracking (self-hosted) -->
+    <script
+        src="https://sentry.vzkn.eu/js-sdk-loader/e7a28931497690dcf899fd29bbb504c2.min.js"
+        crossorigin="anonymous"
+    ></script>
+    <script>
+        Sentry.onLoad(function() {
+            Sentry.init({
+                environment: window.location.hostname === 'vzkn.eu' ? 'production' : 'development',
+                tracesSampleRate: 0.1,
+                replaysSessionSampleRate: 0.1,
+                replaysOnErrorSampleRate: 1.0,
+            });
+        });
+    </script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -64,7 +80,7 @@
         }
     </style>
 </head>
-<body class="bg-darker text-gray-300 min-h-screen">
+<body class="text-gray-300 min-h-screen" style="background-color: #010409;">
 
     <!-- Background grid effect -->
     <div class="fixed inset-0 bg-[linear-gradient(rgba(88,166,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(88,166,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none"></div>
