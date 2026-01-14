@@ -26,17 +26,19 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwindcss.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        dark: '#0d1117',
-                        darker: '#010409',
-                        accent: '#58a6ff',
+        if (typeof tailwindcss !== 'undefined') {
+            tailwindcss.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            dark: '#0d1117',
+                            darker: '#010409',
+                            accent: '#58a6ff',
+                        }
                     }
                 }
-            }
+            };
         }
     </script>
 
